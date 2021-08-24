@@ -1,7 +1,3 @@
-"# BorgattaDavide" 
-"# BorgattaDavide" 
-"# BorgattaDavide" 
-"# BorgattaDavide" 
-"# BorgattaDavide" 
-# BorgattaDavide
-"# BorgattaDavide" 
+ # BorgattaDavide
+
+scrivere.. 
