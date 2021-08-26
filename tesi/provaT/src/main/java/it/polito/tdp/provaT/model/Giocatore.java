@@ -1,4 +1,4 @@
-package it.polito.tdp.tesi.model;
+package it.polito.tdp.provaT.model;
 
 public class Giocatore {
 	
@@ -125,7 +125,8 @@ public class Giocatore {
 
 	@Override
 	public String toString() {
-		return  nome + " " + overall + " (" + posizione + ")";
+		return  nome + " " + overall + "( " + posizione + " )";
 	}
-
+	
+	
 }

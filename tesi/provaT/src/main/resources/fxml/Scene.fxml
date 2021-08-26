@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.tesi.FXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polito.tdp.prova_finale.FXMLController">
    <top>
       <Label text="CREAZIONE ROSA FIFA ULTIMATE TEAM" textOverrun="WORD_ELLIPSIS" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -41,18 +41,18 @@
             </Label>
             <HBox>
                <children>
-                  <GridPane>
+                  <GridPane prefHeight="263.0" prefWidth="321.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
@@ -90,7 +90,7 @@
                               <Insets bottom="10.0" left="10.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Giocatore 2" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <Label text="Giocatore 2" GridPane.rowIndex="4">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -98,7 +98,7 @@
                               <Insets bottom="10.0" left="10.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Giocatore 3" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <Label text="Giocatore 3" GridPane.rowIndex="5">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -106,7 +106,7 @@
                               <Insets bottom="10.0" left="10.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Giocatore 4" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                        <Label text="Giocatore 4" GridPane.rowIndex="6">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -116,49 +116,47 @@
                         </Label>
                         <ComboBox fx:id="boxModulo" prefWidth="161.33333333333334" GridPane.columnIndex="1" />
                         <ComboBox fx:id="boxGiocatore1" prefWidth="161.33333333333334" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <ComboBox fx:id="boxGiocatore2" prefWidth="161.33333333333334" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                        <ComboBox fx:id="boxGiocatore3" prefWidth="161.33333333333334" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="boxGiocatore4" prefWidth="161.33333333333334" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="boxGiocatore2" prefWidth="161.33333333333334" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="boxGiocatore3" prefWidth="161.33333333333334" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <ComboBox fx:id="boxGiocatore4" prefWidth="161.33333333333334" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                      </children>
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </GridPane>
-                  <VBox />
-                  <VBox />
-                  <ImageView fitHeight="170.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                  <VBox>
+                     <children>
+                        <Button fx:id="btnVerifica" mnemonicParsing="false" text="Verifica parametri">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="50.0" top="125.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnCerca" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="164.6666666666666" text="Cerca squadra">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="50.0" top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="176.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:///C:/Users/Borghi98/eclipse-workspace/tesi/img/logo_fut.png" />
+                        <Image url="@../logo%20fifa.png" />
                      </image>
                      <HBox.margin>
-                        <Insets left="10.0" top="40.0" />
+                        <Insets left="90.0" top="50.0" />
                      </HBox.margin>
                   </ImageView>
                </children>
             </HBox>
-            <HBox>
-               <children>
-                  <Button fx:id="btnVeriifica" mnemonicParsing="false" onAction="#doVerifica" prefHeight="30.0" prefWidth="160.0" text="Verifica Requisiti">
-                     <HBox.margin>
-                        <Insets left="10.0" right="100.0" top="20.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Arial Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btnCerca" mnemonicParsing="false" onAction="#doCerca" prefHeight="30.0" prefWidth="160.0" text="Cerca Squadra">
-                     <HBox.margin>
-                        <Insets left="10.0" top="20.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Arial Bold" size="15.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
             <TextArea fx:id="txtRisultato">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="25.0" />
                </VBox.margin>
             </TextArea>
          </children>
