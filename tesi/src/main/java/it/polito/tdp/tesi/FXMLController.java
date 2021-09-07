@@ -1,6 +1,8 @@
 package it.polito.tdp.tesi;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.tesi.model.Giocatore;
@@ -60,6 +62,44 @@ public class FXMLController {
 
     @FXML
     void doVerifica(ActionEvent event) {
+    	
+    	txtRisultato.clear();
+    	
+    	String modulo = this.boxModulo.getValue();
+    	
+    	if (modulo == null ) {
+    		txtRisultato.appendText("Selezionare il modulo che si vuole usare");
+    		return;
+    	}
+    	
+    	int budget;
+    	try {
+    		budget = Integer.parseInt(this.budget.getText());
+    	} catch (NumberFormatException e) {
+    		txtRisultato.setText("Inserire un numero intero");
+    		return;
+    	}
+    	
+    	List<Giocatore> giocatori = new ArrayList<>();
+    	
+    	Giocatore giocatore1 = this.boxGiocatore1.getValue();
+    	giocatori.add(giocatore1);
+    	Giocatore giocatore2 = this.boxGiocatore2.getValue();
+    	giocatori.add(giocatore2);
+    	Giocatore giocatore3 = this.boxGiocatore3.getValue();
+    	giocatori.add(giocatore3);
+    	Giocatore giocatore4 = this.boxGiocatore4.getValue();
+    	giocatori.add(giocatore4);
+    	
+    	if (giocatore1 == null || giocatore2 == null || giocatore3 == null || giocatore4 == null ) {
+    		txtRisultato.appendText("Selezionare i 4 giocatori");
+    		return;
+    	}
+    	
+    
+    	String risultato = model.verificaParametri(modulo, budget, giocatori);
+    	txtRisultato.appendText(risultato);
+    	
 
     }
 
