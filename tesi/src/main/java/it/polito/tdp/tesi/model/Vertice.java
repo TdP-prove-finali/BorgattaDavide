@@ -1,6 +1,6 @@
 package it.polito.tdp.tesi.model;
 
-public class Vertice {
+public class Vertice implements Comparable<Vertice>{
 	
 	private Ruolo ruolo;
 	private Giocatore giocatore;
@@ -50,6 +50,12 @@ public class Vertice {
 		} else if (!ruolo.equals(other.ruolo))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(Vertice v) {
+
+		return this.getRuolo().getId().compareTo(v.getRuolo().getId());
 	} 
 	
 	

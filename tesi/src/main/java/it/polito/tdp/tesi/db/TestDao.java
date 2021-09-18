@@ -22,7 +22,7 @@ public class TestDao {
 			System.out.println(col);
 			
 		System.out.println("\n\nLista Giocatori:");
-		for(Giocatore g : dao.getGiocatori())
+		for(Giocatore g : dao.getGiocatoriTop())
 			System.out.println(g);
 	}
 

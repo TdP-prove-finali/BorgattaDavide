@@ -96,10 +96,12 @@ public class GiocatoriDao {
 	}
 	
 
-	public List<Giocatore> getGiocatori(){
+	public List<Giocatore> getGiocatoriBasso(){
 		
 		String sql = "SELECT *  "
 				+ "FROM giocatori "
+				+ "WHERE (lega = 'LaLiga Santander' OR lega = 'Premier League' "
+				+ "         OR lega = 'Serie A TIM' ) AND ( overall < 82 AND overall > 79) AND revisione = 'Rare'"
 				+ "ORDER BY overall DESC ";
 		
 		List<Giocatore> result = new ArrayList<>();
@@ -125,4 +127,126 @@ public class GiocatoriDao {
 		}	
 	}
 
+	public List<Giocatore> getGiocatoriBase(){
+		
+		String sql = "SELECT *  "
+				+ "FROM giocatori "
+				+ "WHERE (lega = 'LaLiga Santander' OR lega = 'Premier League' "
+				+ "         OR lega = 'Serie A TIM' ) AND ( overall < 80 AND overall > 77) AND revisione = 'Rare'"
+				+ "ORDER BY overall DESC ";
+		
+		List<Giocatore> result = new ArrayList<>();
+		
+		Connection conn = DBConnect.getConnection();
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql); 
+			
+			ResultSet res= st.executeQuery();
+			
+			while(res.next()) {
+				
+				result.add(new Giocatore(res.getInt("giocatoreID"), res.getString("nome"), res.getString("revisione"), 
+						res.getInt("overall"), res.getString("club"), res.getString("lega"), res.getString("nazionalita"), 
+						res.getString("posizione"), res.getInt("prezzo_ps4")));
+			}
+			conn.close();
+			return result; 
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}	
+	}
+
+	public List<Giocatore> getGiocatoriMedio(){
+		
+		String sql = "SELECT *  "
+				+ "FROM giocatori "
+				+ "WHERE (lega = 'LaLiga Santander' OR lega = 'Premier League' "
+				+ "         OR lega = 'Serie A TIM' ) AND ( overall < 84 AND overall > 81) "
+				+ "ORDER BY overall DESC ";
+		
+		List<Giocatore> result = new ArrayList<>();
+		
+		Connection conn = DBConnect.getConnection();
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql); 
+			
+			ResultSet res= st.executeQuery();
+			
+			while(res.next()) {
+				
+				result.add(new Giocatore(res.getInt("giocatoreID"), res.getString("nome"), res.getString("revisione"), 
+						res.getInt("overall"), res.getString("club"), res.getString("lega"), res.getString("nazionalita"), 
+						res.getString("posizione"), res.getInt("prezzo_ps4")));
+			}
+			conn.close();
+			return result; 
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}	
+	}
+
+	public List<Giocatore> getGiocatoriTop(){
+		
+		String sql = "SELECT *  "
+				+ "FROM giocatori  "
+				+ "WHERE overall > 84 "
+				+ "ORDER BY overall DESC ";
+		
+		List<Giocatore> result = new ArrayList<>();
+		
+		Connection conn = DBConnect.getConnection();
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql); 
+			
+			ResultSet res= st.executeQuery();
+			
+			while(res.next()) {
+				
+				result.add(new Giocatore(res.getInt("giocatoreID"), res.getString("nome"), res.getString("revisione"), 
+						res.getInt("overall"), res.getString("club"), res.getString("lega"), res.getString("nazionalita"), 
+						res.getString("posizione"), res.getInt("prezzo_ps4")));
+			}
+			conn.close();
+			return result; 
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}	
+	}
+
+
+	public List<Giocatore> getGiocatoriAlto(){
+		
+		String sql = "SELECT *  "
+				+ "FROM giocatori  "
+				+ "WHERE overall < 86 AND overall > 83 "
+				+ "ORDER BY overall DESC ";
+		
+		List<Giocatore> result = new ArrayList<>();
+		
+		Connection conn = DBConnect.getConnection();
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql); 
+			
+			ResultSet res= st.executeQuery();
+			
+			while(res.next()) {
+				
+				result.add(new Giocatore(res.getInt("giocatoreID"), res.getString("nome"), res.getString("revisione"), 
+						res.getInt("overall"), res.getString("club"), res.getString("lega"), res.getString("nazionalita"), 
+						res.getString("posizione"), res.getInt("prezzo_ps4")));
+			}
+			conn.close();
+			return result; 
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}	
+	}
 }
