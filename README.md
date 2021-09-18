@@ -10,6 +10,6 @@ Istruzioni per l'installazione e l'utilizzo:
 
 4. Modificare, all'interno della classe DBConnect, contenuta nel package it.polito.tdp.db, le credenziali di accesso al database, inserendo le proprie;
 
-5. Visionare la guida video all'utilizzo: ;
+5. Visionare la guida video all'utilizzo: https://youtu.be/3_Zu0uQcVVM ;
 
 6. Eseguire la classe "Main" per avviare l'applicazione;
